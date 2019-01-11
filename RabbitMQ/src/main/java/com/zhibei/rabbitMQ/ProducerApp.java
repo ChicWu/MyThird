@@ -3,6 +3,7 @@ package com.zhibei.rabbitMQ;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
+import com.zhibei.utils.PropertieUtil;
 
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
@@ -14,11 +15,11 @@ public class ProducerApp
         Channel channel = null;
         try {
             ConnectionFactory factory = new ConnectionFactory();
-            factory.setHost("139.199.230.132");
-            factory.setPort(5672);
-            factory.setUsername("App_Producer");
-            factory.setPassword("password");
-            factory.setVirtualHost("App_Virtual");
+            factory.setHost(PropertieUtil.read("Host"));
+            factory.setPort(PropertieUtil.readInteger("Port"));
+            factory.setUsername(PropertieUtil.read("ProducerUsername"));
+            factory.setPassword(PropertieUtil.read("Password"));
+            factory.setVirtualHost(PropertieUtil.read("VirtualHost"));
             //创建与RabbitMQ服务器的TCP连接
             connection = factory.newConnection();
             channel = connection.createChannel();

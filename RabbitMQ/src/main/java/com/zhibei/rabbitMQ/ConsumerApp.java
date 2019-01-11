@@ -1,6 +1,7 @@
 package com.zhibei.rabbitMQ;
 
 import com.rabbitmq.client.*;
+import com.zhibei.utils.PropertieUtil;
 
 import java.io.IOException;
 
@@ -13,11 +14,11 @@ public class ConsumerApp
         try
         {
             ConnectionFactory factory = new ConnectionFactory();
-            factory.setHost("139.199.230.132");
-            factory.setPort(5672);
-            factory.setUsername("App_Consumer");
-            factory.setPassword("password");
-            factory.setVirtualHost("App_Virtual");
+            factory.setHost(PropertieUtil.read("Host"));
+            factory.setPort(PropertieUtil.readInteger("Port"));
+            factory.setUsername(PropertieUtil.read("ConsumerUsername"));
+            factory.setPassword(PropertieUtil.read("Password"));
+            factory.setVirtualHost(PropertieUtil.read("VirtualHost"));
             connection = factory.newConnection();
             channel = connection.createChannel();
 
