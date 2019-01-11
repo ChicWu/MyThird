@@ -1,0 +1,5 @@
+host=127.0.0.1
+port=6379
+password=
+connectTimeout=10000
+operationTimeouts=600
