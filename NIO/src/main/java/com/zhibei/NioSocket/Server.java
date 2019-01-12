@@ -1,4 +1,4 @@
-package com.zhibei.nio;
+package com.zhibei.NioSocket;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
@@ -8,7 +8,6 @@ import java.nio.channels.Selector;
 import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
 import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
 
 public class Server {
     private Selector selector;
