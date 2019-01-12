@@ -1,6 +1,5 @@
-package com.zhibei.Thread;
+package com.zhibei.NioFile;
 
-import com.zhibei.main.Test0;
 import com.zhibei.utils.Log;
 
 import java.io.File;
@@ -43,6 +42,6 @@ public class ThreadIo implements Runnable{
                 e.printStackTrace();
             }
         }
-        System.out.println("Iocopy used time ["+(System.currentTimeMillis()- Test0.start)+"]");
+        System.out.println("Iocopy used time ["+(System.currentTimeMillis()- Log.start)+"]");
     }
 }

@@ -1,4 +1,4 @@
-package com.zhibei.utils;
+package com.zhibei.util;
 
 import java.io.InputStream;
 import java.util.*;
